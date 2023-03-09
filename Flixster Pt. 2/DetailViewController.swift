@@ -20,13 +20,13 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        Nuke.loadImage(with: movie.backdropImage, into: backdropImage)
+        
+        Nuke.loadImage(with: URL(string: "https://image.tmdb.org/t/p/w1280\(movie.backdropImage)")!, into: backdropImage)
+        
         movieTitle.text = movie.title
         voteAverage.text = String(movie.voteAverage)+" Vote Average"
         votes.text = String(movie.voteCount)+" Votes"
         popularity.text = String(movie.popularity)+" Popularity"
-        overview.text = movie.description
+        overview.text = movie.overview
     }
 }
