@@ -2,11 +2,11 @@
 
 Submitted by: **TaeVon Lewis**
 
-**Flixster Pt. 2**is an updated version of [Flixster Pt. 1](https://github.com/lewist13/Flixster-Pt.-1/tree/uikit) that adds more advanced features such as networking and a collection view to display movies in a grid-like layout. With networking using URLSession, the app now fetches now playing movie data from The Movie DB (TMDB) API, allowing users to view more up-to-date movie information. The app also includes a UITabBarController to provide multiple ways to view movies and navigate through the app.
+**Flixster Pt. 2** is an updated version of [Flixster Pt. 1](https://github.com/lewist13/Flixster-Pt.-1/tree/uikit) that adds more advanced features such as networking and a collection view to display movies in a grid-like layout. With networking using URLSession, the app now fetches now playing movie data from The Movie DB (TMDB) API, allowing users to view more up-to-date movie information. The app also includes a UITabBarController to provide multiple ways to view movies and navigate through the app.
 
 The main feature of Flixster Pt. 2 is the use of a UICollectionView to display movie posters in a more visually appealing way. Users can tap on a movie poster to navigate to the detail view, which includes a full description, title, and backdrop image of the selected movie. Overall, Flixster Pt. 2 is a more feature-rich version of Flixster Pt. 1 that provides a more engaging and interactive movie browsing experience for users.
 
-Time spent: **2** hours spent in total
+Time spent: **6** hours spent in total
 
 ## Required Features
 
@@ -19,11 +19,16 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 - [ ] Make an additional network call to another end-point.    
-- [ ] Allow users to scroll when context items are off-screen (table view implemention)## Video Walkthrough
+- [ ] Allow users to scroll when context items are off-screen (table view implemention)
+
+## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src= width= /><br>
+<img src=https://user-images.githubusercontent.com/65370736/224224541-d0f66136-8f60-4066-bd09-f3c96ab663df.gif /><br>
+
+## Notes
+During the implementation of the detail view, I encountered some difficulty in ensuring proper functionality of the scroll view in landscape mode. The scroll view was necessary to enable the user to view all of the content within the detail view by scrolling. Without the scroll view, the entire overview would have been cut off.
 
 ## License
 
