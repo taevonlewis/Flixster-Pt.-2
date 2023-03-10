@@ -9,19 +9,8 @@ import UIKit
 import Nuke
 
 class PosterViewController: UIViewController, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        posters.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PosterCell", for: indexPath) as! PosterCell
-        let poster = posters[indexPath.item]
-        Nuke.loadImage(with: URL(string: "https://image.tmdb.org/t/p/w185\(poster.posterImage)")!, into: cell.posterImageView)
-        
-        return cell
-    }
-    
-    var posters: [Poster] = []
+//    var posters: [Poster] = []
+    var movies: [Movie] = []
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -41,14 +30,14 @@ class PosterViewController: UIViewController, UICollectionViewDataSource {
             
             do {
                 let decoder = JSONDecoder()
-                let response = try decoder.decode(PosterResponse.self, from: data)
-                let posters = response.results
+                let response = try decoder.decode(MoviesResponse.self, from: data)
+                let movies = response.results
                 
                 DispatchQueue.main.async {
-                    self?.posters = posters
+                    self?.movies = movies
                     self?.collectionView.reloadData()
                 }
-                print("\(posters)")
+                print("\(movies)")
             
             } catch {
                 print("❌ Error parsing JSON: \(error.localizedDescription)")
@@ -65,4 +54,26 @@ class PosterViewController: UIViewController, UICollectionViewDataSource {
         let width = (collectionView.bounds.width / numberOfColumns)
         layout.itemSize = CGSize(width: width, height: 180)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        movies.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PosterCell", for: indexPath) as! PosterCell
+        let movie = movies[indexPath.item]
+        Nuke.loadImage(with: URL(string: "https://image.tmdb.org/t/p/w185\(movie.posterImage)")!, into: cell.posterImageView)
+        
+        return cell
+    }
+    
+    // MARK: - Navigation
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if let cell = sender as? UICollectionViewCell,
+                let indexPath = collectionView.indexPath(for: cell),
+                let detailViewController = segue.destination as? DetailViewController {
+                let movie = movies[indexPath.item]
+                detailViewController.movie = movie
+            }
+        }
 }

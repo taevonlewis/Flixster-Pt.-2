@@ -281,6 +281,7 @@
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="posterImageView" destination="QVF-Er-mQA" id="EkP-3b-Va0"/>
+                                            <segue destination="Lbg-aG-lDe" kind="show" id="7hc-X3-Cws"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -324,6 +325,9 @@
             <point key="canvasLocation" x="131" y="689"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7hc-X3-Cws"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.richtext" catalog="system" width="115" height="128"/>
         <image name="film" catalog="system" width="128" height="93"/>
