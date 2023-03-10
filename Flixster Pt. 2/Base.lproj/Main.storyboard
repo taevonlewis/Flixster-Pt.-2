@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -244,14 +245,59 @@
         <!--Posters-->
         <scene sceneID="GDU-5v-zhe">
             <objects>
-                <viewController id="lx4-Y8-nwT" sceneMemberID="viewController">
+                <viewController id="lx4-Y8-nwT" customClass="PosterViewController" customModule="Flixster_Pt__2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CXB-uM-Vt4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0az-Ma-itA">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4TL-cy-GTS">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PosterCell" id="N73-Gu-A4R" customClass="PosterCell" customModule="Flixster_Pt__2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mq5-Uj-3u2">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QVF-Er-mQA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="QVF-Er-mQA" secondAttribute="trailing" id="IV7-4h-z72"/>
+                                                <constraint firstItem="QVF-Er-mQA" firstAttribute="leading" secondItem="Mq5-Uj-3u2" secondAttribute="leading" id="dQh-HI-yY0"/>
+                                                <constraint firstItem="QVF-Er-mQA" firstAttribute="top" secondItem="Mq5-Uj-3u2" secondAttribute="top" id="nIu-R9-8oW"/>
+                                                <constraint firstAttribute="bottom" secondItem="QVF-Er-mQA" secondAttribute="bottom" id="yV0-Jb-sLI"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="posterImageView" destination="QVF-Er-mQA" id="EkP-3b-Va0"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Rec-sM-c8S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="0az-Ma-itA" secondAttribute="bottom" id="7Yq-4x-ar5"/>
+                            <constraint firstItem="0az-Ma-itA" firstAttribute="leading" secondItem="CXB-uM-Vt4" secondAttribute="leading" id="Gpo-30-sdw"/>
+                            <constraint firstItem="0az-Ma-itA" firstAttribute="top" secondItem="CXB-uM-Vt4" secondAttribute="top" id="TcT-q2-dlV"/>
+                            <constraint firstAttribute="trailing" secondItem="0az-Ma-itA" secondAttribute="trailing" id="eXc-UE-rR7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Posters" id="T3Y-z2-stY"/>
+                    <connections>
+                        <outlet property="collectionView" destination="0az-Ma-itA" id="142-aC-4am"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xva-vd-saW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

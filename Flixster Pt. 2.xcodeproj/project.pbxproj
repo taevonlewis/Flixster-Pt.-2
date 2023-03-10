@@ -17,6 +17,9 @@
 		B3C6A97029BA62C700AA1526 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C6A96F29BA62C700AA1526 /* DetailViewController.swift */; };
 		B3C6A97229BA631F00AA1526 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C6A97129BA631F00AA1526 /* MovieCell.swift */; };
 		B3C6A97B29BA662700AA1526 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = B3C6A97A29BA662700AA1526 /* Nuke */; };
+		B3C6A97D29BAAA9100AA1526 /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C6A97C29BAAA9100AA1526 /* PosterViewController.swift */; };
+		B3C6A97F29BAB3F600AA1526 /* Posters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C6A97E29BAB3F600AA1526 /* Posters.swift */; };
+		B3C6A98129BAB6B400AA1526 /* PosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C6A98029BAB6B400AA1526 /* PosterCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		B3C6A96D29BA625B00AA1526 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		B3C6A96F29BA62C700AA1526 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B3C6A97129BA631F00AA1526 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		B3C6A97C29BAAA9100AA1526 /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
+		B3C6A97E29BAB3F600AA1526 /* Posters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posters.swift; sourceTree = "<group>"; };
+		B3C6A98029BAB6B400AA1526 /* PosterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,8 @@
 				B3C6A96629BA616000AA1526 /* Info.plist */,
 				B3C6A96F29BA62C700AA1526 /* DetailViewController.swift */,
 				B3C6A97129BA631F00AA1526 /* MovieCell.swift */,
+				B3C6A97C29BAAA9100AA1526 /* PosterViewController.swift */,
+				B3C6A98029BAB6B400AA1526 /* PosterCell.swift */,
 			);
 			path = "Flixster Pt. 2";
 			sourceTree = "<group>";
@@ -82,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				B3C6A96D29BA625B00AA1526 /* Movies.swift */,
+				B3C6A97E29BAB3F600AA1526 /* Posters.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C6A97F29BAB3F600AA1526 /* Posters.swift in Sources */,
+				B3C6A97D29BAAA9100AA1526 /* PosterViewController.swift in Sources */,
+				B3C6A98129BAB6B400AA1526 /* PosterCell.swift in Sources */,
 				B3C6A95D29BA615F00AA1526 /* MovieViewController.swift in Sources */,
 				B3C6A95929BA615F00AA1526 /* AppDelegate.swift in Sources */,
 				B3C6A97229BA631F00AA1526 /* MovieCell.swift in Sources */,
