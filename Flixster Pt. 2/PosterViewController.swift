@@ -59,10 +59,10 @@ class PosterViewController: UIViewController, UICollectionViewDataSource {
         collectionView.dataSource = self
         
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.minimumInteritemSpacing = 4
+        layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 4
         let numberOfColumns: CGFloat = 3
-        let width = (collectionView.bounds.width - layout.minimumInteritemSpacing * (numberOfColumns - 1)) / numberOfColumns
-        layout.itemSize = CGSize(width: width, height: width)
+        let width = (collectionView.bounds.width / numberOfColumns)
+        layout.itemSize = CGSize(width: width, height: 180)
     }
 }
