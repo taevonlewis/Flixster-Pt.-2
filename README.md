@@ -1,4 +1,4 @@
-# Project 3 - *Flixster Pt. 2*
+# Project 3 - *Flixster Pt. 2 (Storyboard Version)*
 
 Submitted by: **TaeVon Lewis**
 
