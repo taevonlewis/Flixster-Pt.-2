@@ -11,7 +11,7 @@ import SwiftUI
 struct Flixster_Pt__2App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MoviesView()
         }
     }
 }
