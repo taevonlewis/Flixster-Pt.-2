@@ -48,8 +48,6 @@ struct MoviesView: View {
                             .foregroundColor(.white)
                         }
                     }
-                    .listRowBackground(Color.black)
-                    .listRowSeparatorTint(Color.white)
                 }
                 .padding(EdgeInsets(top: -10, leading: -20, bottom: -10, trailing: -20))
                 .listStyle(.plain)
@@ -59,37 +57,15 @@ struct MoviesView: View {
             .onAppear {
                 viewModel.fetchMovies()
             }
-            .background(Color.black.edgesIgnoringSafeArea(.all))
             .tabItem {
                 Label("Movies", systemImage: "film")
             }
-            .toolbarBackground(Color.black, for: .tabBar)
+            .preferredColorScheme(.dark)
+            PostersView()
+                .tabItem {
+                    Label("Posters", systemImage: "doc.richtext")
+                }
         }
-    }
-    
-    init(){
-        Theme.navigationBarColors(background: .black, titleColor: .white)
-    }
-}
-
-    
-struct Theme {
-    static func navigationBarColors(background: UIColor = .clear,
-                                    titleColor: UIColor = .black,
-                                    tintColor: UIColor = .black) {
-        
-        let navigationAppearance = UINavigationBarAppearance()
-        navigationAppearance.configureWithOpaqueBackground()
-        navigationAppearance.backgroundColor = background
-        
-        navigationAppearance.titleTextAttributes = [.foregroundColor: titleColor]
-        navigationAppearance.largeTitleTextAttributes = [.foregroundColor: titleColor]
-        
-        UINavigationBar.appearance().standardAppearance = navigationAppearance
-        UINavigationBar.appearance().compactAppearance = navigationAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = navigationAppearance
-        
-        UINavigationBar.appearance().tintColor = tintColor
     }
 }
 

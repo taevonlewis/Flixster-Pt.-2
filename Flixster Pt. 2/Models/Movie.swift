@@ -23,3 +23,4 @@ struct Movie: Decodable {
     let vote_count: Int
     let popularity: Double
 }
+
